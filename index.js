@@ -17,6 +17,8 @@ const reposeRecord = async () => {
 	minuteCalculator(guardsArray);
 	findSleepiestGuardData(guardsArray);
 	console.log(guardsArray[0]);
+	findSleepiestMinuteGuardData(guardsArray);
+	console.log(guardsArray[0]);
 };
 
 const arrayifyAndSort = (data) => {
@@ -164,14 +166,28 @@ const minuteCalculator = (guardsArray) => {
 
 const findSleepiestGuardData = (guardsArray) => {
 	guardsArray.sort((guard1, guard2) => {
+		return guard2.totalMinutes - guard1.totalMinutes;
+	});
+};
+
+const findSleepiestMinuteGuardData = (guardsArray) => {
+	guardsArray.sort((guard1, guard2) => {
 		return guard2.bestMinuteValue - guard1.bestMinuteValue;
 	});
 };
 
 reposeRecord();
 
+console.log(2351 * 36);
+console.log(1871 * 49);
+
 /*
-SLEEPIEST GUARD - 1871
-THEIR SLEEPIEST MINUTE - 00:49
-FINAL ANSWER - 1871 * 49 = 91679
+STRATEGY 1 sleepiestGuardData
+SLEEPIEST GUARD - 2351
+THEIR SLEEPIEST MINUTE - 00:36
+FINAL ANSWER - 2351 * 36 = 84636
+*/
+
+/*
+STRATEGY 2 sleepiestMinuteGuard
 */
