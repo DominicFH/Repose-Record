@@ -150,7 +150,7 @@ const minuteCalculator = (guardsArray) => {
 			// Add each total amount of minutes slept for each guard
 			innerTotalMinutes = innerTotalMinutes + guardsArray[i].sleepyMinutes[j];
 			/* 
-            If current sleepyMinute has value less than the current bestMinute
+            If current sleepyMinute has value greater than the current bestMinute
             Then replace bestMinute with the sleepyMinute
             */
 			if (guardsArray[i].sleepyMinutes[j] > innerBestMinuteValue) {
